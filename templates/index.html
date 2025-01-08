@@ -1,182 +1,207 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toggl - Learn While You Scroll</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
+<!DOCTYPE HTML>
+<!--
+	Strongly Typed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Toggl - Empower Your Screen Time</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	</head>
+	<style>
+		  body {
+            background-color: #feeedd; /* Toggl accent color */
+        }
+		.logo {
+            width: 400px; /* Adjust the size of the image */
+            height: auto;
+            margin-bottom: -200px;
+			margin-top: -250px;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+	</style>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
 
-        .header {
-            background: #5cb3ff;
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-        }
+			<!-- Header -->
+				<section id="header" style="background-color: #feeedd; color: white; margin-bottom: -70px;">
+					<div class="container">
 
-        .logo {
-            font-size: 2.5rem;
-            margin: 0;
-        }
+						<!-- Logo -->
+						<img src="{{ url_for('static', filename='toggllogo.png') }}" alt="Toggl Logo" class="logo">
+							<p>An iOS application designed to help you scroll less and learn more.</p>
 
-        .tagline {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            font-weight: 300;
-        }
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<!-- <li><a class="icon solid fa-home" href="index.html"><span>Introduction</span></a></li> -->
+									<li><a href="#features" class="icon fa-chart-bar"><span>Features</span></a></li>
+									<li><a class="icon solid fa-cog" href="#main"><span>Privacy Policy</span></a></li>
+									<li><a class="icon solid fa-envelope" href="#footer"><span>Contact</span></a></li>
+								</ul>
+							</nav>
 
-        .main-content {
-            padding: 20px 0;
-        }
+					</div>
+				</section>
 
-        .about, .features, .cta {
-            margin-bottom: 40px;
-        }
+			<!-- Features -->
+				<section id="features">
+					<div class="container">
+						<header>
+							<h2 style="color: #39a2b5; margin-top: -50px;" >Make Every App Count with Toggl</h2>
+						</header>
+						<div class="row aln-center">
+							<div class="col-4 col-6-medium col-12-small">
 
-        h2 {
-            color: #5cb3ff;
-        }
+								<!-- Feature -->
+									<section class = "subhead">
+										<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+										<header>
+											<h3 style="color: #39a2b5;">What is Toggl?</h3>
+										</header>
+										<p>Toggl is an innovative app that transforms how you use your screen time. Every time you access a restricted app, Toggl presents a quick learning question tailored to your selected mode.</p>
+		
+										<img src="{{ url_for('static', filename='Question1.png') }}" alt="Toggl Logo" class="logo" style="display: block; margin: 0 auto;">
 
-        .features ul {
-            list-style: none;
-            padding: 0;
-        }
+									</section>
 
-        .features ul li {
-            margin-bottom: 10px;
-        }
+							</div>
+							<div class="col-4 col-6-medium col-12-small">
 
-        .features ul li strong {
-            color: #5cb3ff;
-        }
+								<!-- Feature -->
+									<section>
+										<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+										<header>
+											<h3 style="color: #39a2b5;">Personalized Learning</h3>
+										</header>
+										<p>Choose from Interview Prep, General Trivia, MCAT Study Mode, and more. Or, build a custom study mode! Toggl adapts to your preferences, making learning part of your routine.</p>
+										<img src="{{ url_for('static', filename='Home.png') }}" alt="Toggl Logo" class="logo" style="display: block; margin: 0 auto;">
 
-        .cta {
-            text-align: center;
-        }
+									</section>
 
-        .cta .button {
-            display: inline-block;
-            background: #5cb3ff;
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+							</div>
+							<div class="col-4 col-6-medium col-12-small">
 
-        .cta .button:hover {
-            background: #4688e6;
-        }
+								<!-- Feature -->
+									<section>
+										<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+										<header>
+											<h3 style="color: #39a2b5;">Track Your Progress</h3>
+										</header>
+										<p>Toggl will track your learning progress and encourage you to keep limiting the endless scrolling. Earn badges and rewards while tracking your learning milestones.</p>
+										<img src="{{ url_for('static', filename='Stats1.png') }}" alt="Toggl Logo" class="logo" style="display: block; margin: 0 auto;">
 
-        .footer {
-            background: #f4f4f4;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
+									</section>
 
-        .under-development {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #ffcccb;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #990000;
-            border: 2px solid #990000;
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">Toggl</h1>
-            <p class="tagline">Less Scrolling, More Learning</p>
-        </div>
-    </header>
-    <div class="under-development">Site Under Development</div>
-    <main class="main-content">
-        <section class="about">
-            <div class="container">
-                <h2>What is Toggl?</h2>
-                <p>Toggl is an app designed to turn your everyday social media usage into a learning opportunity. Every time you open a restricted app, Toggl challenges you with a quick question from your selected learning mode, keeping you engaged and informed.</p>
-            </div>
-        </section>
-        <section class="features">
-            <div class="container">
-                <h2>Why Toggl?</h2>
-                <ul>
-                    <li><strong>Personalized Learning:</strong> Choose from modes like SAT Tutor, Coding Practice, and Relaxation Exercises.</li>
-                    <li><strong>Efficient Time Use:</strong> Make every moment count by turning idle browsing into quick learning sessions.</li>
-                    <li><strong>Stay Accountable:</strong> Track your progress and usage statistics to stay motivated.</li>
-                    <li><strong>Fun and Interactive:</strong> Earn rewards and badges as you learn!</li>
-                </ul>
-            </div>
-        </section>
-        <section class="cta">
-            <div class="container">
-                <h2>Get Started Today</h2>
-                <p>Join the thousands of users transforming their habits with Toggl. Download now and take the first step toward smarter scrolling.</p>
-                <a href="#" class="button">Download Toggl</a>
-            </div>
-        </section>
-        <section class="pp">
-            <div class="container">
-                <p>Privacy Policy for Toggl
+							</div>
+							<!-- <div class="col-12">
+								<ul class="actions">
+									<li><a href="#main" class="button icon solid fa-file">Learn More</a></li>
+								</ul>
+							</div> -->
+						</div>
+					</div>
+				</section>
 
-                    Last Updated: 1/7/2025
-                    
-                    At Toggl, we value your privacy. This Privacy Policy explains how we handle your information while you use our app. Toggl is committed to maintaining a secure and transparent user experience.
-                    
-                    1. Information We Collect
-                    Toggl does not collect personal information from users. We may record app-related activity, such as the number of questions answered and usage patterns, to improve the user experience. However, this information is not linked to any individual.
-                    
-                    2. How We Use Information
-                    Any activity data collected is used solely to:
-                    
-                    Enhance app functionality and user experience.
-                    Ensure the app operates efficiently.
-                    No data is collected for personalization, analytics, or advertising purposes.
-                    
-                    3. Data Sharing
-                    We do not share, sell, or trade any user data with third parties.
-                    
-                    4. Children’s Privacy
-                    Toggl is designed for users of all ages. We do not collect or process sensitive information about children.
-                    
-                    5. Data Security
-                    Since Toggl does not collect or store personal information, no additional safeguards for sensitive data are required. All app-related activities occur locally on your device.
-                    
-                    6. User Rights
-                    Users have full control over their app-related activity data. Toggl allows users to reset or delete their activity history within the app at any time.
-                    
-                    7. Updates to This Privacy Policy
-                    This Privacy Policy may be updated periodically. Any changes will be reflected in the app settings, ensuring you stay informed.
-                    
-                    8. Contact Us
-                    If you have any questions about this Privacy Policy, please contact us at:
-                    
-                    Email: dwildersmythe@gmail.com
-                    </p>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Toggl. All Rights Reserved.</p>
-        </div>
-    </footer>
-</body>
+			<!-- Banner -->
+				<section id="banner">
+					<div class="container";>
+						<p style="color: #39a2b5;">Empower your screen time with <strong>Toggl</strong>. Scroll less, learn more.</p>
+					</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+
+							<!-- Content -->
+								<div id="content" class="col-8 col-12-medium">
+
+									<!-- Post -->
+										<article class="box post">
+											<header>
+												<h2><a href="#">Privacy Policy</a></h2>
+											</header>
+											<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+											<p style="font-size: 13px;">Toggl is committed to protecting your privacy and ensuring the security of your information. As part of this commitment, we do not track, store, or share any personally identifiable information (PII) without your explicit consent. All app data, settings, and content are securely stored locally on your device.
+
+												To enhance the functionality and quality of Toggl, we may collect limited, anonymized data to optimize user experience and app performance. Below, we explain the services we use and how your data is handled:
+												
+												Data Collection and Usage
+												1. Local Storage
+												All your personalized settings, app usage preferences, and question data are stored locally on your device. This ensures you retain full control over your data without requiring cloud storage or external servers.
+												
+												2. Apple App Analytics
+												We use Apple App Analytics to collect anonymized data, such as crash reports, app uninstalls, and usage metrics. This data helps us understand how Toggl performs and identify areas for improvement. Apple shares this data only if you grant permission, and all information remains anonymous.
+												
+												3. Non-Identifiable Data for Research and Development
+												In addition to app performance, we may analyze aggregated, non-identifiable usage data to improve Toggl’s educational content and app features. This data does not include any information that could personally identify you.
+												
+												Changes to This Privacy Policy
+												We regularly review and update our privacy policy to reflect changes in our practices and services. Any significant updates will be communicated to you through the app or other appropriate channels. This privacy policy was last updated January 2024.
+												
+												Contact Us
+												If you have any questions, concerns, or feedback about our privacy practices or the Toggl app, please contact us:
+												Email: dev@toggl.com.</p>
+											<ul class="actions">
+												<!-- <li><a href="#footer" class="button icon solid fa-envelope">Contact Us</a></li> -->
+											</ul>
+										</article>
+								</div>
+
+							<!-- Sidebar -->
+								<div id="sidebar" class="col-4 col-12-medium">
+
+									<!-- Excerpts -->
+										<section>
+											<header>
+												<h3>Stay Connected</h3>
+											</header>
+											<p>Got questions or feedback? Reach out and discover how Toggl can transform your habits today.</p>
+										</section>
+								</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<section id="footer">
+					<div class="container">
+						<header>
+							<h2>Questions or comments? <strong>Get in touch:</strong></h2>
+						</header>
+						<form method="post" action="#">
+							<div class="row gtr-50">
+								<div class="col-6 col-12-small">
+									<input name="name" placeholder="Name" type="text" />
+								</div>
+								<div class="col-6 col-12-small">
+									<input name="email" placeholder="Email" type="text" />
+								</div>
+								<div class="col-12">
+									<textarea name="message" placeholder="Message"></textarea>
+								</div>
+								<div class="col-12">
+									<a href="#" class="form-button-submit button icon solid fa-envelope">Send Message</a>
+								</div>
+							</div>
+						</form>
+					</div>
+				</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
